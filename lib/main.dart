@@ -24,21 +24,21 @@ class _MyAppState extends State<MyApp> {
 
   List<Meal> _availableMeals = DUMMY_MEALS;
   List<Meal> _favoriteMeals = [];
-  
+
   void _updateFilters(Map<String, bool> filterData) {
     setState(() {
       _filters = filterData;
       _availableMeals = DUMMY_MEALS.where((meal) {
-        if (_filters['gluten'] && !meal.isGlutenFree) {
+        if (_filters['gluten']! && !meal.isGlutenFree) {
           return false;
         }
-        if (_filters['lactose'] && !meal.isLactoseFree) {
+        if (_filters['lactose']! && !meal.isLactoseFree) {
           return false;
         }
-        if (_filters['vegetarian'] && !meal.isVegetarian) {
+        if (_filters['vegetarian']! && !meal.isVegetarian) {
           return false;
         }
-        if (_filters['vegan'] && !meal.isVegan) {
+        if (_filters['vegan']! && !meal.isVegan) {
           return false;
         }
         return true;
@@ -47,13 +47,13 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _toggleFavorites(String mealId) {
-    final existingIndex = _favoriteMeals.indexWhere((meal) => meal.id == mealId);
+    final existingIndex =
+        _favoriteMeals.indexWhere((meal) => meal.id == mealId);
     if (existingIndex >= 0) {
       setState(() {
         _favoriteMeals.removeAt(existingIndex);
       });
-    }
-    else {
+    } else {
       setState(() {
         _favoriteMeals.add(DUMMY_MEALS.firstWhere((meal) => meal.id == mealId));
       });
@@ -70,21 +70,33 @@ class _MyAppState extends State<MyApp> {
       title: 'Comida Boa',
       theme: ThemeData(
         primarySwatch: Colors.pink,
-        accentColor: Colors.amber,
+        colorScheme: ColorScheme(
+          brightness: Brightness.light,
+          primary: Colors.pink,
+          onPrimary: Colors.white,
+          secondary: Colors.amber,
+          onSecondary: Colors.white70,
+          error: Colors.red,
+          onError: Colors.white,
+          background: Colors.white60,
+          onBackground: Colors.black87,
+          surface: Colors.orange,
+          onSurface: Colors.black87,
+        ),
         canvasColor: Color.fromRGBO(255, 254, 229, 1),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
-              bodyText1: TextStyle(
+              bodyLarge: TextStyle(
                 color: Color.fromRGBO(20, 51, 51, 1),
               ),
-              bodyText2: TextStyle(
+              bodyMedium: TextStyle(
                 color: Color.fromRGBO(20, 51, 51, 1),
               ),
-              headline5: TextStyle(
+              headlineMedium: TextStyle(
                 fontSize: 22,
                 color: Colors.white,
               ),
-              headline6: TextStyle(
+              headlineSmall: TextStyle(
                 fontSize: 20,
                 fontFamily: 'Roboto',
                 fontWeight: FontWeight.bold,
@@ -101,8 +113,10 @@ class _MyAppState extends State<MyApp> {
       ),
       home: TabsPage(_favoriteMeals),
       routes: {
-        CategoryMealsPage.routeName: (ctx) => CategoryMealsPage(_availableMeals),
-        MealDetailPage.routeName: (ctx) => MealDetailPage(_toggleFavorites, _isMealFavorite),
+        CategoryMealsPage.routeName: (ctx) =>
+            CategoryMealsPage(_availableMeals),
+        MealDetailPage.routeName: (ctx) =>
+            MealDetailPage(_toggleFavorites, _isMealFavorite),
         FiltersPage.routeName: (ctx) => FiltersPage(_filters, _updateFilters),
       },
     );

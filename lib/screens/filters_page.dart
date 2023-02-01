@@ -24,10 +24,10 @@ class _FiltersPageState extends State<FiltersPage> {
 
   @override
   initState() {
-    _glutenFree = widget.currentFilters['gluten'];
-    _lactoseFree = widget.currentFilters['lactose'];
-    _vegetarian = widget.currentFilters['vegetarian'];
-    _vegan = widget.currentFilters['vegan'];
+    _glutenFree = widget.currentFilters['gluten'] ?? false;
+    _lactoseFree = widget.currentFilters['lactose'] ?? false;
+    _vegetarian = widget.currentFilters['vegetarian'] ?? false;
+    _vegan = widget.currentFilters['vegan'] ?? false;
     super.initState();
   }
 
@@ -35,7 +35,7 @@ class _FiltersPageState extends State<FiltersPage> {
     String title,
     String subtitle,
     bool initialValue,
-    Function updateValue,
+    void Function(bool) updateValue,
   ) {
     return SwitchListTile(
       title: Text(
@@ -112,13 +112,15 @@ class _FiltersPageState extends State<FiltersPage> {
           Padding(
             padding: const EdgeInsets.only(bottom: 100),
             child: Container(
-              child: RaisedButton(
+              child: ElevatedButton(
                   child: Text(
                     'SALVAR FILTROS',
-                    style: Theme.of(context).textTheme.headline6,
+                    style: Theme.of(context).textTheme.headlineSmall,
                   ),
-                  color: Theme.of(context).primaryColor,
-                  padding: const EdgeInsets.all(10),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Theme.of(context).primaryColor,
+                    padding: const EdgeInsets.all(10)
+                  ),
                   onPressed: () {
                     widget.setFilters({
                       'gluten': _glutenFree,

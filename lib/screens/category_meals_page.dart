@@ -12,9 +12,9 @@ class CategoryMealsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final routeArgs =
-        ModalRoute.of(context).settings.arguments as Map<String, String>;
+        ModalRoute.of(context)?.settings.arguments as Map<String, String>;
     final categoryId = routeArgs['id'];
-    final categoryTitle = routeArgs['title'];
+    final categoryTitle = routeArgs['title'] ?? '';
     final categoryMeals = availableMeals.where((meal) {
       return meal.categories.contains(categoryId);
     }).toList();
@@ -22,7 +22,7 @@ class CategoryMealsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           categoryTitle,
-          style: Theme.of(context).textTheme.headline5,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
       ),
       body: ListView.builder(

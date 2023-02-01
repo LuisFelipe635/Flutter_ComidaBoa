@@ -12,12 +12,12 @@ class MealItem extends StatelessWidget {
   final Cost cost;
 
   MealItem({
-    @required this.id,
-    @required this.title,
-    @required this.imageUrl,
-    @required this.duration,
-    @required this.complexity,
-    @required this.cost,
+    required this.id,
+    required this.title,
+    required this.imageUrl,
+    required this.duration,
+    required this.complexity,
+    required this.cost,
   });
 
   void selectMeal(BuildContext context) {
@@ -46,13 +46,10 @@ class MealItem extends StatelessWidget {
     switch (complexity) {
       case Complexity.Simples:
         return 'Fácil';
-        break;
       case Complexity.Mediana:
         return 'Média';
-        break;
       case Complexity.Trabalhosa:
         return 'Difícil';
-        break;
       default:
         return 'Dificuldade\nnão informada';
     }
@@ -63,13 +60,10 @@ class MealItem extends StatelessWidget {
     switch (cost) {
       case Cost.Barata:
         return 'Barata';
-        break;
       case Cost.Cara:
         return 'Cara';
-        break;
       case Cost.Luxuosa:
         return 'Muito Cara';
-        break;
       default:
         return 'Custo não\ninformado';
     }
