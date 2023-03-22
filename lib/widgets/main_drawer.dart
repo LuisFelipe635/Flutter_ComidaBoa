@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_strings.dart';
 
 class MainDrawer extends StatelessWidget {
   Widget buildListTile(IconData icon, String title, void Function() tapHandler) {
@@ -31,7 +32,7 @@ class MainDrawer extends StatelessWidget {
             alignment: Alignment.centerLeft,
             color: Theme.of(context).colorScheme.secondary,
             child: Text(
-              'Bem-vinde ao Comida Boa!',
+              AppStrings.of(context).greeting,
               style: TextStyle(
                 fontWeight: FontWeight.w900,
                 fontSize: 30,
@@ -44,17 +45,13 @@ class MainDrawer extends StatelessWidget {
           ),
           buildListTile(
             Icons.restaurant,
-            'Receitas',
-            () {
-              Navigator.of(context).pushReplacementNamed('/');
-            },
+            AppStrings.of(context).recipes,
+            () => Navigator.of(context).pushReplacementNamed('/')
           ),
           buildListTile(
             Icons.filter_list,
-            'Filtros',
-            () {
-              Navigator.of(context).pushNamed('/filters');
-            },
+            AppStrings.of(context).filters,
+            () => Navigator.of(context).pushNamed('/filters')
           ),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_strings.dart';
 
 import 'categories_page.dart';
 import 'favorites_page.dart';
@@ -21,14 +22,14 @@ class _TabsPageState extends State<TabsPage> {
       // initialIndex: 0,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Comida Boa'),
+          title: Text(AppStrings.of(context).goodFood),
           bottom: TabBar(
             tabs: <Widget>[
               Tab(
-                text: 'CATEGORIAS',
+                text: AppStrings.of(context).categories,
               ),
               Tab(
-                text: 'FAVORITAS',
+                text: AppStrings.of(context).favorites,
               ),
             ],
           ),

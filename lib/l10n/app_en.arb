@@ -1,0 +1,18 @@
+{
+  "goodFood": "Good Food",
+  "categories": "Categories",
+  "favorites": "Favorites",
+  "greeting": "Welcome to Good Food!",
+  "recipes": "Recipes",
+  "filters": "Filters",
+  "italian": "Italian",
+  "quickAndEasy": "Quick & Easy",
+  "hamburgers": "Hamburgers",
+  "german": "German",
+  "lightMeals": "Light Meals",
+  "exotic": "Exotic",
+  "breakfast": "Breakfast",
+  "asian": "Asian",
+  "french": "French",
+  "summer": "For the Summer"
+}

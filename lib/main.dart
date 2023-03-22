@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_strings.dart';
 
 import './dummy_data.dart';
 import './models/meal.dart';
@@ -68,6 +70,16 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Comida Boa',
+      localizationsDelegates: [
+        AppStrings.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('pt'),
+        const Locale('en'),
+      ],
       theme: ThemeData(
         primarySwatch: Colors.pink,
         colorScheme: ColorScheme(

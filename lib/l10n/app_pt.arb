@@ -1,0 +1,66 @@
+{
+  "goodFood": "Comida Boa",
+  "@goodFood": {
+    "description": "The application's title"
+  },
+  "categories": "Categorias",
+  "@categories": {
+    "description": "Meals categories"
+  },
+  "favorites": "Favoritas",
+  "@favorites": {
+    "description": "Meals marked as favorite"
+  },
+  "greeting": "Bem-vinde ao Comida Boa!",
+  "@greeting": {
+    "description": "Main drawer greeting message"
+  },
+  "recipes": "Receitas",
+  "@recipes": {
+    "description": "Recipes menu option"
+  },
+  "filters": "Filtros",
+  "@filters": {
+    "description": "Filters menu option"
+  },
+  "italian": "Italiana",
+  "@italian": {
+    "description": "Italian meals category"
+  },
+  "quickAndEasy": "Rápida & Fácil",
+  "@quickAndEasy": {
+    "description": "Quick & Easy meals category"
+  },
+  "hamburgers": "Hambúrgueres",
+  "@hamburgers": {
+    "description": "Hamburgers meals category"
+  },
+  "german": "Alemã",
+  "@german": {
+    "description": "German meals category"
+  },
+  "lightMeals": "Comidas leves",
+  "@lightMeals": {
+    "description": "Light meals category"
+  },
+  "exotic": "Exóticas",
+  "@exotic": {
+    "description": "Exotic meals category"
+  },
+  "breakfast": "Café da Manhã",
+  "@breakfast": {
+    "description": "Breakfast meals category"
+  },
+  "asian": "Asiática",
+  "@asian": {
+    "description": "Asian meals category"
+  },
+  "french": "Francesa",
+  "@french": {
+    "description": "Asian meals category"
+  },
+  "summer": "Para o Verão",
+  "@summer": {
+    "description": "Summer meals category"
+  }
+}
